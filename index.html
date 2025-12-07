@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marathi-English Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-layer-group"></i> Vocabulary Flashcards</h1>
+            <div class="progress-container">
+                <span id="current-count">1</span> / <span id="total-count">0</span>
+            </div>
+        </header>
+
+        <div class="card-scene">
+            <div class="card" id="flashcard">
+                
+                <div class="card-face card-front">
+                    <span class="level-badge" id="level-badge">A1</span>
+                    <div class="content">
+                        <h2 id="en-word">Word</h2>
+                        <p class="pos" id="pos-tag">noun</p>
+                    </div>
+                    <button class="audio-btn" onclick="speakWord(event)">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <div class="instruction">Click to Flip</div>
+                </div>
+
+                <div class="card-face card-back">
+                    <div class="content">
+                        <h2 id="mr-word">शब्द</h2>
+                        <p class="transliteration" id="transliteration">shabda</p>
+                        <hr>
+                        <p class="meaning" id="mr-meaning">Meaning here</p>
+                        
+                        <div class="examples">
+                            <p class="ex-en"><i class="fas fa-quote-left"></i> <span id="ex-en">Example...</span></p>
+                            <p class="ex-mr"><span id="ex-mr">उदाहरण...</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn secondary" onclick="prevCard()"><i class="fas fa-arrow-left"></i> Prev</button>
+            <button class="btn primary" onclick="flipCard()">Flip <i class="fas fa-sync-alt"></i></button>
+            <button class="btn secondary" onclick="nextCard()">Next <i class="fas fa-arrow-right"></i></button>
+        </div>
+        
+        <div class="extra-controls">
+            <button class="btn-small" onclick="shuffleDeck()"><i class="fas fa-random"></i> Shuffle</button>
+            <button class="btn-small" onclick="resetDeck()"><i class="fas fa-redo"></i> Reset</button>
+        </div>
+    </div>
+
+    <script src="words.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
